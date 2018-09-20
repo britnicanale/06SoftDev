@@ -8,12 +8,6 @@ def hello_world():
     print(__name__)
     return "No hablo queso!"
 
-@app.route("/morestuff")
-def more_stuff():
-    return "This page has MORE STUFF"
-
-
 if __name__ == "__main__":
     app.debug = True
     app.run()
-
