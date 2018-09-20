@@ -1,7 +1,7 @@
-'''Britni Canale & Dennis Chen
-SoftDev1 pd6
-K9 -- Solidify
-2018-09-20'''
+# Terrible TicTacs - Britni Canale & Dennis Chen
+# SoftDev1 pd06
+# K09 -- Solidify
+# 2018 - 09 - 20
 
 from flask import Flask
 
