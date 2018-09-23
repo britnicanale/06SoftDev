@@ -4,11 +4,19 @@
 <body>
 <h1> {{rand}} </h1>
 <table>
-{%for n in range(0, len(k))%}
+{%for key in dict%}
+{%if key == 'Job Class' or key == 'Total'%}
 <tr>
-<td> {{k(n)}} </td>
-<td> {{v(n)}} </td>
+<td> <b>{{key}} </b></td>
+<td> <b>{{dict[key]}} </b></td>
 </tr>
+{%endif%}
+{%if key != 'Job Class' or key != 'Total'%}
+<tr>
+<td> {{key}} </td>
+<td> {{dict[key]}} </td>
+</tr>
+{%endif%}
 {%endfor%}
 </table>
 </body>
