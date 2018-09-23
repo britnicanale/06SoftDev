@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+<title> {{ttl}} </title>
+<body>
+<h1> {{rand}} </h1>
+<table>
+{%for n in range(0, len(k))%}
+<tr>
+<td> {{k(n)}} </td>
+<td> {{v(n)}} </td>
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

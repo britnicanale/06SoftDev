@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+<title> {{ttl}} </title>
+<body>
+<h1> {{rand}} </h1>
+<table>
+{%for key in dict%}
+<tr>
+<td> {{key}} </td>
+<td> {{dict[key]}} </td>
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>
