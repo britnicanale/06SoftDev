@@ -33,7 +33,7 @@ def hello_world():
 
 @app.route("/my_foist_template")
 def hello_temp():
-    getOcc("static/occupations.csv") #calls function that created dictionary out of the csv file
+    getOcc("data/occupations.csv") #calls function that created dictionary out of the csv file
     return render_template("temp.html", ttl = "Random Stuff", rand = list(occs.keys())[random.randint(1, len(list(occs.keys())) - 2)], dict = occs)
 #                          filename     title of page         random occupation                                                        dictionary of occupations
 
