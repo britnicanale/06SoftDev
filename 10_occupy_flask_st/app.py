@@ -19,23 +19,23 @@ def getOcc(filename):
     lineSeparated = csv.reader(f) 
     for line in lineSeparated:
         if line[0] == 'Job Class': #exception for first, doesn't store value as float, used for heading of table
-            titleKey = line[0]
+            key = line[0]
             val = line[1]
-            occs[titleKey] = val
-        if line[0] != 'Job Class':#includes total to be used for end of table
-            titleKey = line[0]
-            percentValue = float(line[1])
-            occs[titleKey] = percentValue
+            occs[key] = val
+        else:
+            key = line[0]
+            percent = float(line[1])
+            occs[key] = percent
 
 @app.route("/")
 def hello_world():
-    return "This is the home page"
+    return "This is the home page<br><a href = \"/occupations\"> Here </a> is a link to a page with information regarding occupations"
 
-@app.route("/my_foist_template")
+@app.route("/occupations")
 def hello_temp():
     getOcc("data/occupations.csv") #calls function that created dictionary out of the csv file
-    return render_template("temp.html", ttl = "Random Stuff", rand = list(occs.keys())[random.randint(1, len(list(occs.keys())) - 2)], dict = occs)
-#                          filename     title of page         random occupation                                                        dictionary of occupations
+    return render_template("temp.html", ttl = "Occupations in the United States", rand = list(occs.keys())[random.randint(1, len(list(occs.keys())) - 2)], dict = occs, header = 'Job Class', footer = 'Total')
+#                          filename     title of page                             random occupation                                                        dictionary of occupations
 
 
 if __name__ == "__main__":

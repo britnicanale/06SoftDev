@@ -1,23 +1,23 @@
 <!DOCTYPE>
 <html>
-<title> {{ttl}} </title>
-<body>
-<h1> {{rand}} </h1>
-<table>
-{%for key in dict%}
-{%if key == 'Job Class' or key == 'Total'%}
-<tr>
-<td> <b>{{key}} </b></td>
-<td> <b>{{dict[key]}} </b></td>
-</tr>
-{%endif%}
-{%if key != 'Job Class' or key != 'Total'%}
-<tr>
-<td> {{key}} </td>
-<td> {{dict[key]}} </td>
-</tr>
-{%endif%}
-{%endfor%}
-</table>
-</body>
+  <title> {{ttl}} </title>
+  <body>
+    <h1> This webpage contains information about various occupations in the United States</h1>
+    <p>  {{rand}} </p>
+    <table border="1">
+      {%for item in dict%}
+      {%if item == header or item == footer%}
+      <tr>
+	<th> {{item}} </th>
+	<th> {{dict[item]}} </th>
+      </tr>
+      {%else%}
+      <tr>
+	<td> {{item}} </td>
+	<td> {{dict[item]}} </td>
+      </tr>
+      {%endif%}
+      {%endfor%}
+    </table>
+  </body>
 </html>
