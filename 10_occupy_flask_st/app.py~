@@ -27,6 +27,12 @@ def getOcc(filename):
             percent = float(line[1])
             occs[key] = percent
 
+def getRandOcc():
+    randList = list(occs.keys())
+    randList.pop(0)
+    randList.pop()
+    return random.choice(randList)
+
 @app.route("/")
 def hello_world():
     return "This is the home page<br><a href = \"/occupations\"> Here </a> is a link to a page with information regarding occupations"
@@ -34,8 +40,8 @@ def hello_world():
 @app.route("/occupations")
 def hello_temp():
     getOcc("data/occupations.csv") #calls function that created dictionary out of the csv file
-    return render_template("temp.html", ttl = "Occupations in the United States", rand = list(occs.keys())[random.randint(1, len(list(occs.keys())) - 2)], dict = occs, header = 'Job Class', footer = 'Total')
-#                          filename     title of page                             random occupation                                                        dictionary of occupations
+    return render_template("temp.html", ttl = "Occupations in the United States", rand = getRandOcc(), dict = occs, header = 'Job Class', footer = 'Total')
+#                          filename     title of page                             random occupation    dictionary of occupations
 
 
 if __name__ == "__main__":

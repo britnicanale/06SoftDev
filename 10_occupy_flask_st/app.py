@@ -27,7 +27,7 @@ def getOcc(filename):
             percent = float(line[1])
             occs[key] = percent
 
-def getRandOcc():
+def getRandOcc():  #returns a random occupation
     randList = list(occs.keys())
     randList.pop(0)
     randList.pop()
