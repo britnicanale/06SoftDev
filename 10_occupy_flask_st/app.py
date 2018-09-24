@@ -1,6 +1,6 @@
-'''Britni Canale
+'''MmmmmmChocolate-Britni Canale & Mohammad Uddin
 SoftDev1 pd6
-K10 -- My Foist Template
+K10 -- Jinja Tuning
 2018-09-22'''
 
 import random
