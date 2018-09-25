@@ -2,7 +2,7 @@
 <html>
   <title> {{ttl}} </title>
   <body>
-    <h1> This webpage contains information about various occupations in the United States</h1>
+    <h1> This webpage contains information about {{ttl}}</h1>
     <p>  {{rand}} </p>
     <table border="1">
       {%for item in dict%}

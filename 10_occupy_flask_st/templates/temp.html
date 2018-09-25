@@ -1,23 +1,45 @@
 <!DOCTYPE>
+
 <html>
+
   <title> {{ttl}} </title>
+
   <body>
+
     <h1> This webpage contains information about {{ttl}}</h1>
+
     <p>  {{rand}} </p>
+
     <table border="1">
+
       {%for item in dict%}
+
       {%if item == header or item == footer%}
+
       <tr>
+
 	<th> {{item}} </th>
+
 	<th> {{dict[item]}} </th>
+
       </tr>
+
       {%else%}
+
       <tr>
+
 	<td> {{item}} </td>
+
 	<td> {{dict[item]}} </td>
+
       </tr>
+
       {%endif%}
+
       {%endfor%}
+
     </table>
+
   </body>
+
 </html>
