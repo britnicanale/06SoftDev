@@ -25,7 +25,7 @@ def getOcc(filename):
             occs[key] = percent
     return occs
 
-def getRandOcc(occs):                   #returns a random occupation                                     
+def getRandOcc():                   #returns a random occupation                                     
     randList = list(occs.keys())    #creates a list of keys (occupations) to get the random from     
     randList.pop(0)                 #removes the first element ("Job Class")                 
     randList.pop()                  #removes the last element ("Total")                                  

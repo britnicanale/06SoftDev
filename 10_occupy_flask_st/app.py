@@ -5,7 +5,7 @@ K10 -- Jinja Tuning
 
 
 from flask import Flask, render_template
-#touch?? something???
+import util.occupations as occupations
 
 
 app = Flask(__name__)
@@ -14,15 +14,15 @@ app = Flask(__name__)
 #---------FLASK stuff, where the app routes are and the above functions are called---------
 
 
-@app.route("/")
+@app.route("/")                                 #home route, includes link to occupations route for convenience
 def hello_world():
     return "This is the home page<br><a href = \"/occupations\"> Here </a> is a link to a page with information regarding occupations"
 
-@app.route("/occupations")
+@app.route("/occupations")                      #occupations route, contains info regarding some occupations in the US
 def hello_temp():
-    getOcc("data/occupations.csv")  #calls function that created dictionary out of the csv file
-    return render_template("temp.html", ttl = "Occupations in the United States", rand = getRandOcc(), dict = occs, header = 'Job Class', footer = 'Total')
-#                          filename     title of page                             random occupation    dictionary of occupations 
+    occs = occupations.getOcc("data/occupations.csv")  #calls function that created dictionary out of the csv file
+    return render_template("temp.html", ttl = "Occupations in the United States", rand = occupations.getRandOcc(occs), dict = occs, header = 'Job Class', footer = 'Total')
+#                          filename     title of page                             random occupation                    dictionary of occupations 
 
 
 
