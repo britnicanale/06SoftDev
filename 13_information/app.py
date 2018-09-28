@@ -13,7 +13,8 @@ def hello_world():
     return render_template("form.html") #renders template for form, which has fields for names and submit button
 
 
-@app.route("/auth")                     #route for echo
+@app.route("/auth")
+@app.route("/auth", methods=["POST"])                     #route for echo
 def authenticate():                     #enders echo template, uses request to get info from forms and request type, which is put into echo temp
     print(app)                          #info for debugging/informational purposes
     print(request)
