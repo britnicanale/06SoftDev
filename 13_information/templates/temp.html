@@ -1,14 +1,23 @@
 <!DOCTYPE>
 
 <html>
-
-  <title></title>
-
-  <body>
   
-    <h1><a href="/auth"><button> SUBMIT </button></a></h1>
-
-
+  <title>Form</title>
+  
+  <body style="text-align:center;" >
+    
+    <p style="font-size:150%;"> Please fill out this form with the requested information</p>
+    
+    <form action="/auth"  method="get" id="form1" style="font-size:100%;">
+      
+      First Name: <input type="text" name="fname"><br><br>
+      
+      Last Name: <input type="text" name="lname"><br><br>
+      
+      <button href="/auth" inputtype="button" form="form1" value="Submit">SUBMIT</button>
+      
+    </form>
+    
   </body>
-
+  
 </html>
