@@ -16,7 +16,7 @@ def hello_world():
 def welcome():
     print(request.args)
     print(request.method)
-    return render_template("welcome.html", uname = "SUCK")#request.args["uname"])
+    return render_template("welcome.html", uname = request.form["uname"])
 
 if __name__ == "__main__":
     app.debug = True
