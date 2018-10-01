@@ -12,9 +12,11 @@ def hello_world():
     return render_template("login.html")
 
 @app.route("/welcome")
-@app.route("/welcome", methods=["POST"])
+@app.route("/welcome", methods=["POST", "GET"])
 def welcome():
-    return render_template("welcome.html", uname = request.args["uname"])
+    print(request.args)
+    print(request.method)
+    return render_template("welcome.html", uname = "SUCK")#request.args["uname"])
 
 if __name__ == "__main__":
     app.debug = True
