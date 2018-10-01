@@ -14,7 +14,7 @@ def hello_world():
 
 
 @app.route("/auth")
-#@app.route("/auth", methods=["POST", "GET"])                     #route for echo
+@app.route("/auth", methods=["POST", "GET"])                     #route for echo
 def authenticate():                     #enders echo template, uses request to get info from forms and request type, which is put into echo temp
     print(app)                          #info for debugging/informational purposes
     print(request)
