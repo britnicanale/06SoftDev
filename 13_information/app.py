@@ -14,13 +14,14 @@ def hello_world():
 
 
 @app.route("/auth")
-@app.route("/auth", methods=["POST", "GET"])                     #route for echo
+@app.route("/auth", methods=["GET", "POST"])                     #route for echo
 def authenticate():                     #enders echo template, uses request to get info from forms and request type, which is put into echo temp
-    print(app)                          #info for debugging/informational purposes
-    print(request)
-    print(request.args)
-    return render_template("echo.html", req = request.method, first = request.args["fname"], last = request.args["lname"]) 
-
+    #print(app)                          #info for debugging/informational purposes
+    #print(request)
+    if request.method == "POST":
+        return render_template("echo.html", req = request.method, first = request.form["fname"], last = request.form["lname"]) 
+    return render_template("echo.html", req = request.method, first = request.args["fname"], last = request.args["lname"])
+        
 
 if __name__ == "__main__":              #runs app
     app.debug = True
