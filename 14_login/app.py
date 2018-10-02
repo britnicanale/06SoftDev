@@ -33,15 +33,17 @@ def welcome():
             pw = request.args["pword"]
         uncorrect = un == uname                   #creates booleans for username equal and password equal, sent to error to determine error messages
         pwcorrect = pw == pword
+        print("<style=\"color:red;\">" + uname + pword)
         if uncorrect and pwcorrect:               #checks username and password, if correct adds to session and renders welcome page and
             session["username"] = uname           #displays error messages if something went wrong, has button to go back to login page
             return render_template("welcome.html", uname = un)
-        if not uncorrect:
-            flash("Your username is incorrect")
-        if not pwcorrect:
-            flash("Your password is incorrect")
-        return redirect(url_for("welcome"))
-    return render_template("welcome.html", uname = unamey)
+        else:
+            if not uncorrect:
+                flash("Your username is incorrect")
+            if not pwcorrect:
+                flash("Your password is incorrect")
+            return redirect(url_for("login"))
+    return render_template("welcome.html", uname = uname)
 
 @app.route("/logout")                         #route for logging out
 def go():

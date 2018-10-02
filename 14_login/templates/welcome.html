@@ -5,30 +5,23 @@ K14 -- Do I Know You?
 2018-10-01                            
 -->
 
-<!DOCTYPE>
+{% extends "base.html" %}
 
-<html>
 
-  <title> WELCOME </title>
 
-  <body> 
+{% block heading %}
 
-    {% set msgs = get_flashed_messages() %}
-
-    {% for each in msgs %}
-
-    {{each}}
-
-    {% endfor %}
-
-    <p style="textalign:center;"> Welcome {{uname}}! </p> <!--welcomes user-->
+<style="textalign:center;"> Welcome {{uname}}!  <!--welcomes user-->
     
-    <form action="/logout" id="logoutform">
+{% endblock %}
 
-      <button href="/logout" inputtype="button" form="logoutform" value="Logout">LOGOUT</button>  <!--button for logging out-->
 
-    </form>
+{% block form %}
 
-  </body>
+  <form action="/logout" id="logoutform">
 
-</html>
+    <button href="/logout" inputtype="button" form="logoutform" value="Logout">LOGOUT</button>  <!--button for logging out-->
+
+  </form>
+
+{% endblock %} 

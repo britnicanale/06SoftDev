@@ -4,30 +4,47 @@ SoftDev1 pd 6
 K14 -- Do I Know You?
 2018-10-01
 -->
-<!DOCTYPE>
 
-<html>
+{% extends "base.html" %}
 
-  <title> Login Page </title>
 
-  <body>
+{% block title %}
+
+Login Page
+
+{% endblock %}
+
+
+{% block heading %}
+
+Please Sign In
+
+{% endblock %}
+
+
+{% block errors %}
+
+{% set msgs = get_flashed_messages() %}
+
+{% for each in msgs %}
+
+{{each}}
+
+{% endfor %}
+
+{% endblock %}
+
+
+{% block form %}
+
+<form action="/welcome"  id="form"  method="GET">   <!-- creates form with method post, used for gaining login information-->
   
-    <h1>Please Sign In</h1>
+  Username: <input type="text" name="uname"><br>
 
-    <p>
+  Password: <input type="text" name="pword"><br>
 
-      <form action="/welcome"  id="form"  method="GET">   <!-- creates form with method post, used for gaining login information-->
+  <button  href="/welcome" inputtype="button" form="form" value="Login">LOGIN</button>  <!--login button-->
 
-	Username: <input type="text" name="uname"><br>
+</form>
 
-	Password: <input type="text" name="pword"><br>
-
-	<button  href="/welcome" inputtype="button" form="form" value="Login">LOGIN</button>  <!--login button-->
-
-      </form>
-
-    </p>
-
-  </body>
-
-</html>
+{% endblock %}
