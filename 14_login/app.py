@@ -22,11 +22,15 @@ def login():
     return redirect(url_for("welcome"))
 
 
-@app.route("/welcome", methods=["POST"])      #welcome route (if logged in only), only accepts POST requests
+@app.route("/welcome", methods=["POST", "GET"])      #welcome route (if logged in only), EDITonly accepts POST requests
 def welcome():
     if "username" not in session:              #checks to see if you were previously logged in or not
-        un = request.form["uname"]                #gets login info from form
-        pw = request.form["pword"]
+        if request.method == "POST":
+            un = request.form["uname"]                #gets login info from form
+            pw = request.form["pword"]
+        else:
+            un = request.args["uname"]
+            pw = request.args["pword"]
         uncorrect = un == uname                   #creates booleans for username equal and password equal, sent to error to determine error messages
         pwcorrect = pw == pword
         if uncorrect and pwcorrect:               #checks username and password, if correct adds to session and renders welcome page and
