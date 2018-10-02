@@ -28,7 +28,7 @@ Please Sign In
 
 {% for each in msgs %}
 
-{{each}}
+<p style="color:red;">{{each}} <br><br> </p>
 
 {% endfor %}
 
@@ -37,7 +37,7 @@ Please Sign In
 
 {% block form %}
 
-<form action="/welcome"  id="form"  method="GET">   <!-- creates form with method post, used for gaining login information-->
+<form action="/welcome"  id="form"  method="POST">   <!-- creates form with method post, used for gaining login information-->
   
   Username: <input type="text" name="uname"><br>
 
