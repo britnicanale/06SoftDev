@@ -1,4 +1,4 @@
-#Britni Canale & Kyle Tau
+#TomJerry - Britni Canale & Kyle Tau
 #SoftDev1 pd 6
 #K14 -- Do I Know You?
 #2018-10-01
@@ -34,7 +34,7 @@ def welcome():
             session["username"] = uname           #displays error messages if something went wrong, has button to go back to login page
             return render_template("welcome.html", uname = un)
         return render_template("error.html", username = uncorrect, password = pwcorrect)     
-    return render_template("welcome.html", uname = uname)
+    return render_template("welcome.html", uname = unamey)
 
 @app.route("/logout")                         #route for logging out
 def go():
