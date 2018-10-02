@@ -14,24 +14,29 @@ app.secret_key = os.urandom(32)               #generates random 32-bit secret_ke
     
 uname = "tom"                                 #HARDCODED USERNAME AND PASSWORD       
 pword = "jerry"
-
+#loggedin = False
 
 @app.route("/")                               #root route, redirects to welcome if logged in, loads login page if not
 def login():
     if "username" not in session:
         return render_template("login.html")
+    #loggedin = True
     return redirect(url_for("welcome"))
+
 
 @app.route("/welcome")
 @app.route("/welcome", methods=["POST"])      #welcome route (if logged in only), only accepts POST requests
 def welcome():
+    #if not loggedin:                              #checks to see if you were previously logged in or not
     un = request.form["uname"]                #gets login info from form
     pw = request.form["pword"]
-    if un == uname and pw == pword:           #checks username and password, if correct adds to session and renders welcome page
-        session["username"] = uname
+    uncorrect = un == uname                   #creates booleans for username equal and password equal, sent to error to determine error messages
+    pwcorrect = pw == pword
+    if uncorrect and pwcorrect:               #checks username and password, if correct adds to session and renders welcome page and
+        session["username"] = uname           #displays error messages if something went wrong, has button to go back to login page
         return render_template("welcome.html")
-    return render_template("error.html")      #displays error messages if something went wrong, has button to go back to login page
-
+    return render_template("error.html", username = uncorrect, password = pwcorrect)     
+    #return render_template("welcome.html")
 
 @app.route("/logout")                         #route for logging out
 def go():
