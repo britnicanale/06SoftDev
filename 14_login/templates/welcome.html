@@ -1,27 +1,19 @@
-<!--                                  
-TomJerry - Britni Canale & Kyle Tau   
-SoftDev1 pd 6                         
-K14 -- Do I Know You?                 
-2018-10-01                            
--->
+<!DOCTYPE>
 
-{% extends "base.html" %}
+<html>
 
+  <title> WELCOME </title>
 
+  <body> 
 
-{% block heading %}
-
-<style="textalign:center;"> Welcome {{uname}}!  <!--welcomes user-->
+    <p style="textalign:center;"> Welcome {{uname}}! </p> <!--welcomes user-->
     
-{% endblock %}
+    <form action="/logout" id="logoutform">
 
+      <button href="/logout" inputtype="button" form="logoutform" value="Logout">LOGOUT</button>  <!--button for logging out-->
 
-{% block form %}
+    </form>
 
-  <form action="/logout" id="logoutform">
+  </body>
 
-    <button href="/logout" inputtype="button" form="logoutform" value="Logout">LOGOUT</button>  <!--button for logging out-->
-
-  </form>
-
-{% endblock %} 
+</html>

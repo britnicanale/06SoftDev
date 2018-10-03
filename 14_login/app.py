@@ -3,7 +3,7 @@
 #K14 -- Do I Know You?
 #2018-10-01
 
-from flask import Flask, render_template, session, request, url_for, redirect, flash
+from flask import Flask, render_template, session, request, url_for, redirect
 import os
 
 app = Flask(__name__)
@@ -22,27 +22,18 @@ def login():
     return redirect(url_for("welcome"))
 
 
-@app.route("/welcome", methods=["POST", "GET"])      #welcome route (if logged in only), EDITonly accepts POST requests
+@app.route("/welcome")
+@app.route("/welcome", methods=["POST"])      #welcome route (if logged in only), only accepts POST requests
 def welcome():
-    if "username" not in session:              #checks to see if you were previously logged in or not
-        if request.method == "POST":
-            un = request.form["uname"]                #gets login info from form
-            pw = request.form["pword"]
-        else:
-            un = request.args["uname"]
-            pw = request.args["pword"]
+    if "username"not in session:              #checks to see if you were previously logged in or not
+        un = request.form["uname"]                #gets login info from form
+        pw = request.form["pword"]
         uncorrect = un == uname                   #creates booleans for username equal and password equal, sent to error to determine error messages
         pwcorrect = pw == pword
-        print("<style=\"color:red;\">" + uname + pword)
         if uncorrect and pwcorrect:               #checks username and password, if correct adds to session and renders welcome page and
             session["username"] = uname           #displays error messages if something went wrong, has button to go back to login page
             return render_template("welcome.html", uname = un)
-        else:
-            if not uncorrect:
-                flash("Your username is incorrect")
-            if not pwcorrect:
-                flash("Your password is incorrect")
-            return redirect(url_for("login"))
+        return render_template("error.html", username = uncorrect, password = pwcorrect)     
     return render_template("welcome.html", uname = uname)
 
 @app.route("/logout")                         #route for logging out
