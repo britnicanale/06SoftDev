@@ -13,20 +13,25 @@ c = db.cursor()
 
 def makeReader(filename):
     try:
-        open(filename, 'r')
-        reader = csv.DictReader(filename)
+        f = open(filename, 'r')
+        reader = csv.DictReader(f)
+        print("yay")
+        print(reader)
         return reader
     except:
+        print("FAIL")
         return
 
 def makeTable(c, reader):
     c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER)")
     for row in reader:
-        c.execute("INSERT INTO courses VALUES(" + row['code'] + "," + row['mark'] + "," + row['id'] + ")")
         print(row)
+        command = ("INSERT INTO courses  VALUES( " + row['code'] + ", " + row['mark'] + ", " + row['id'] + ")")
+        print(command)
+        c.execute(command)
 
-reader = makeReader("courses.csv")
-#makeTable(c, reader)
+reader = makeReader('courses.csv')
+makeTable(c, reader)
 
 #print(reader)
 
