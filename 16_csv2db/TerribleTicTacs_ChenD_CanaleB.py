@@ -39,6 +39,5 @@ def makeTable(filename):
 
 makeTable("courses.csv")
 makeTable("peeps.csv")
-#print(c.execute("SELECT * FROM cour"))
 db.commit()       #save changes
 db.close()        #close database
