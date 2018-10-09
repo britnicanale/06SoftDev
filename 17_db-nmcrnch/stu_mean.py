@@ -29,14 +29,6 @@ def studentGrades(ID):
     	strList += "Course: " + item[1] + " Grade: "+ str(item[2]) + "\n"
     return strList
 
-
-#Calculates average based on list of grades
-def average(grades):
-    sum = 0.0
-    for grade in grades:
-        sum += grade
-    return sum / len(grades)
-    
     
 #Calculates average based on student name
 def studentAverages(ID):                          #Takes only grades from student with given id
@@ -97,9 +89,11 @@ def quickaddCourses(newcourses):
 
 #=================FOR TESTING PURPOSES================
 
+newcourses= [("SCIENCE", 15, 10)]
 print(studentGrades(10))
 print(studentAverages(10))
 print (display())
+avgTable()
 quickaddCourses(newcourses)
 addCourses("MATH", 50, 10)
 
