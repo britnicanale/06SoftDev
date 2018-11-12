@@ -16,40 +16,40 @@ K23 -- How the Other Half Lives
 
   <body>
     <div class = "container" style = "text-align:center">
-      <br><h1> Intro to Bootstrap </h1>
-    </div>
+      <br><h1 class = "fixed-top" style = "background-color:lightgray"> Intro to Bootstrap </h1>
+    </div><br><br>
     <div class="alert alert-info" role = "alert">
       Hello! This is a website giving a brief overview of some components of Bootstrap, a front-end framework. For more detailed information, click <a href="https://getbootstrap.com/docs/4.1/" class="alert-link">here</a>; you will be directed to the Bootstrap Documentation.
     </div>
     <div class = "container">
       <div class= "row">
-        <div class = "col-md-2" style="background-color:gray">
+        <nav id = "navbar" class = "col-md-2" style="background-color:gray; position:relative; top:0;">
           <ul class="nav flex-md-column">
             <h5> <br>Menu </h5>
             <li class="nav-item">
-              <a class="nav-link" href="#">Active</a>
+              <a class="nav-link" href="#ThisSite">This Site</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#Buttons">Buttons</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#Components">COMPONENTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Disabled</a>
+              <a class="nav-link" href="https://getbootstrap.com/docs/4.1/">Bootstrap Documentation</a>
             </li>
           </ul>
-        </div>
-        <div class = "col-md-10">
+        </nav>
+        <div class = "col-md-10" data-spy="scroll" data-target="#navbar" data-offset="0">
           <br> <h2> <b>Features and Components</b></h2><br>
-          <h4> <b>This Site </b></h4>
+          <h4 id = "ThisSite"> <b>This Site </b></h4>
           <p> This site contains a number of features from Bootstrap that are actively in use. These include:
             <li> <b>A Responsive Grid</b> - When you change the width of your browswer screen, the menu will pop up as a top bar as opposed to a vertical navigation bar.</li>
             <li> <b>Navigation Bar</b> - The navigation bar contains functional links to other parts of this site and external sources. </li>
             <li> <b>A Sticky Footer</b> - Using a combination of inline CSS and Bootstrap grids, a footer can be made sticky so that it is always visible. </li>
             <li> <b>An Alert</b> - The alert above provides information about the website, as well as containing an alert-link. It is not dismissible. </li>
           </p><br><br>
-          <h4> <b> Buttons </b></h4>
+          <h4 id ="Buttons"> <b> Buttons </b></h4>
           <p> Buttons can be used to trigger different actions. They have many different styles, as shown below.</p>
           <div>
             <button type="button" class="btn btn-primary">Primary</button>
@@ -74,7 +74,7 @@ K23 -- How the Other Half Lives
             </xmp></code></pre>
           </div><br><br>
 
-          <h4><b>COMPONENT</b></h4>
+          <h4 id = "Components"><b>COMPONENT</b></h4>
           <p> INFORMATION </p>
           <div>
             Stuff In Bootstrap
