@@ -33,7 +33,16 @@ K23 -- How the Other Half Lives
               <a class="nav-link" href="#Buttons">Buttons</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Components">COMPONENTS</a>
+              <a class="nav-link" href="#Badges">Badges</a>
+            </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="#Forms">Forms</a>
+            </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="#Jumbotrons">Jumbotrons</a>
+            </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="#Pagination">Pagination</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://getbootstrap.com/docs/4.1/">Bootstrap Documentation</a>
@@ -49,6 +58,7 @@ K23 -- How the Other Half Lives
             <li> <b>A Sticky Footer</b> - Using a combination of inline CSS and Bootstrap grids, a footer can be made sticky so that it is always visible. </li>
             <li> <b>An Alert</b> - The alert above provides information about the website, as well as containing an alert-link. It is not dismissible. </li>
           </p><br><br>
+
           <h4 id ="Buttons"> <b> Buttons </b></h4>
           <p> Buttons can be used to trigger different actions. They have many different styles, as shown below.</p>
           <div>
@@ -74,14 +84,262 @@ K23 -- How the Other Half Lives
             </xmp></code></pre>
           </div><br><br>
 
-          <h4 id = "Components"><b>COMPONENT</b></h4>
-          <p> INFORMATION </p>
+         <h4 id ="Badges"> <b> Badges </b> <span class = "badge badge-secondary">Badge</span></h4>
+          <p> Badges can be used to highlight or label different items. They have many different styles, as shown below.</p>
           <div>
-            Stuff In Bootstrap
-          </div>
+            <span class="badge badge-primary">Primary</span>
+	    <span class="badge badge-secondary">Secondary</span>
+	    <span class="badge badge-pill badge-success">Success</span>
+	    <span class="badge badge-pill badge-danger">Danger</span>
+	    <a href="#" class="badge badge-warning">Warning</a>
+	    <a href="#" class="badge badge-info">Info</a>
+	    <button type="button" class="btn btn-light">Light <span class="badge badge-light">4</span></button>
+            <button type="button" class="btn btn-dark">Dark <span class="badge badge-light">10</span></button>
+          </div><br>
           <div style = "background-color:lightgray">
-            <pre><code class="language-html" data-lang="html" style = "font-size: 15px"><xmp>
-              <CODE>
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <span class="badge badge-primary">Primary</span>
+	      <span class="badge badge-secondary">Secondary</span>
+	      <span class="badge badge-pill badge-success">Success</span>
+	      <span class="badge badge-pill badge-danger">Danger</span>
+	      <a href="#" class="badge badge-warning">Warning</a>
+	      <a href="#" class="badge badge-info">Info</a>
+	      <button type="button" class="btn btn-light">Light <span class="badge badge-light">4</span></button>
+              <button type="button" class="btn btn-dark">Dark <span class="badge badge-light">10</span></button>
+            </xmp></code></pre>
+          </div><br><br>
+
+	  <h4 id ="Forms"> <b> Forms </b></h4>
+          <p> Forms have many different input variables, someof which are showcased below.</p>
+          <div>
+            <form>
+	      <div class="form-group">
+		<label for="exampleFormControlInput1">Email address</label>
+		<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+	      </div>
+	      <div class="form-group">
+		<label for="exampleFormControlSelect1">Example select</label>
+		<select class="form-control" id="exampleFormControlSelect1">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		</select>
+	      </div>
+	      <div class="form-group">
+		<label for="exampleFormControlSelect2">Example multiple select</label>
+		<select multiple class="form-control" id="exampleFormControlSelect2">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		</select>
+	      </div>
+	      <div class="form-group">
+		<label for="formControlRange">Example Range input</label>
+		<input type="range" class="form-control-range" id="formControlRange">
+	      </div>
+	      <div class="form-group">
+		<label for="exampleFormControlCheckRadio1">Example check box radio buttons</label>
+		<div class="form-check">
+		  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+		  <label class="form-check-label" for="defaultCheck1">
+		    1
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+		  <label class="form-check-label" for="defaultCheck1">
+		    2
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+		  <label class="form-check-label" for="exampleRadios1">
+		    1
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+		  <label class="form-check-label" for="exampleRadios2">
+		    2
+		  </label>
+		</div>
+	      </div>
+	      <div class="form-group">
+		<label for="exampleFormControlTextarea1">Example text area</label>
+		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+	      </div>
+	      <button type="submit" class="btn btn-primary">Submit</button>
+	    </form>
+          </div><br>
+
+          <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+		  <form>
+		    <div class="form-group">
+		      <label for="exampleFormControlInput1">Email address</label>
+		      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+		    </div>
+		    <div class="form-group">
+		      <label for="exampleFormControlSelect1">Example select</label>
+		      <select class="form-control" id="exampleFormControlSelect1">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		      </select>
+		    </div>
+		    <div class="form-group">
+		      <label for="exampleFormControlSelect2">Example multiple select</label>
+		      <select multiple class="form-control" id="exampleFormControlSelect2">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		      </select>
+		    </div>
+		    <div class="form-group">
+		      <label for="formControlRange">Example Range input</label>
+		      <input type="range" class="form-control-range" id="formControlRange">
+		    </div>
+		    <div class="form-group">
+		      <label for="exampleFormControlCheckRadio1">Example check box radio buttons</label>
+		      <div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+			<label class="form-check-label" for="defaultCheck1">
+			  1
+			</label>
+		      </div>
+		      <div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+			<label class="form-check-label" for="defaultCheck1">
+			  2
+			</label>
+		      </div>
+		      <div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+			<label class="form-check-label" for="exampleRadios1">
+			  1
+			</label>
+		      </div>
+		      <div class="form-check">
+			<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+			<label class="form-check-label" for="exampleRadios2">
+			  2
+			</label>
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label for="exampleFormControlTextarea1">Example text area</label>
+		      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		    </div>
+		    <button type="submit" class="btn btn-primary">Submit</button>
+		  </form>
+            </xmp></code></pre>
+          </div><br><br>
+
+	  <h4 id ="Jumbotrons"> <b> Jumbotrons </b></h4>
+          <p> Jumbotrons can be used to showcase key messages on a site since they occupy the most space they can.</p>
+          <div>
+	    <div class="jumbotron">
+	      <h1 class="display-4">JUMBOTRON!!!</h1>
+	      <p class="lead">This is a jumbotron</p>
+	      <hr class="my-4">
+	      <p>It's pretty jumbo</p>
+	      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+	    </div>
+	    <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <div class="jumbotron">
+		<h1 class="display-4">JUMBOTRON!!!</h1>
+		<p class="lead">This is a jumbotron</p>
+		<hr class="my-4">
+		<p>It's pretty jumbo</p>
+		<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+	      </div>
+            </xmp></code></pre>
+          </div>
+	    <div class="jumbotron jumbotron-fluid">
+	      <div class="container">
+		<h1 class="display-4">FLUID JUMBOTRON!!!</h1>
+		<p class="lead">A fluid jumbotron occupies the entire horizontal space of its parent and also lacks rounded corners.</p>
+	      </div>
+	    </div>
+          </div><br>
+          <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <div class="jumbotron jumbotron-fluid">
+		<div class="container">
+		  <h1 class="display-4">FLUID JUMBOTRON!!!</h1>
+		  <p class="lead">A fluid jumbotron occupies the entire horizontal space of its parent and also lacks rounded corners.</p>
+		</div>
+	      </div>
+            </xmp></code></pre>
+          </div><br><br>
+
+	  <h4 id ="Pagination"> <b> Pagination </b></h4>
+          <p> Pagination can be used to navigate a site with multiple pages.</p>
+          <div>
+            <nav aria-label="Pagination">
+	      <ul class="pagination">
+		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+	      </ul>
+	    </nav>
+          </div><br>
+          <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <nav aria-label="Pagination">
+		<ul class="pagination">
+		  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		  <li class="page-item"><a class="page-link" href="#">1</a></li>
+		  <li class="page-item"><a class="page-link" href="#">2</a></li>
+		  <li class="page-item"><a class="page-link" href="#">3</a></li>
+		  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		</ul>
+	      </nav>
+            </xmp></code></pre>
+          </div>
+	  <div>
+	    <p> You can make a certain page active, showing what page the user is on.</p>
+            <nav aria-label="Pagination">
+	      <ul class="pagination">
+		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+	      </ul>
+	    </nav>
+          </div><br>
+          <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            </xmp></code></pre>
+          </div><br><br>
+	  <div>
+	    <p> You can also make a page disabled, meaning the user cannot go there from where they are currently.</p>
+            <nav aria-label="Pagination">
+	      <ul class="pagination">
+		<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+	      </ul>
+	    </nav>
+          </div><br>
+          <div style = "background-color:lightgray">
+            <pre><code class="language-html" data-lang="html" style = "font-size: 15px;" ><xmp>
+              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
             </xmp></code></pre>
           </div><br><br>
 
@@ -115,8 +373,9 @@ K23 -- How the Other Half Lives
     vertical-align:center;
     height: 50px;
   }
-
-
+  a{
+    color: white;
+  }
 </style>
 <!--  .bd-callout {
   padding: 1.25rem;
