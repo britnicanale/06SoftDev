@@ -18,7 +18,9 @@ app.secret_key = os.urandom(32)
 def hello():
     lat = 0
     long = 0
-    if request.args["lat"] == "" or abs(float(request.args["lat"])) > 90:
+    if "lat" not in request.args or "long" not in request.args:
+        flash("You must fill out all fields")
+    elif request.args["lat"] == "" or abs(float(request.args["lat"])) > 90:
         flash("Invalid Latitude")
     elif request.args["long"] == "" or abs(float(request.args["long"])) > 180:
         flash("Invalid Longitude")
