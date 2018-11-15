@@ -1,0 +1,212 @@
+{"response":
+  {"version":2,
+  "code":200,
+  "method":"GET",
+  "href":"https://api.getchute.com/v2"},
+"data":
+  {"end_points":
+    {"albums":
+      [
+        {"title":"Album Listing",
+        "href":"https://api.getchute.com/v2/albums",
+        "method":"GET"
+        },
+        {"title":"Album Details",
+        "href":"https://api.getchute.com/v2/albums/:id",
+        "method":"GET"
+        },
+        {"title":"Album Create",
+        "href":"https://api.getchute.com/v2/albums",
+        "method":"POST",
+        "request":
+          "{\"name\":\"My Awesome Album\",
+          \"moderate_media\":true,
+          \"moderate_comments\":false
+          }"
+        },
+        {"title":"Album Update",
+        "href":"https://api.getchute.com/v2/albums/:id",
+        "method":"PUT",
+        "request":
+          "{\"name\":\"My Awesome Album\",
+          \"moderate_media\":true,
+          \"moderate_comments\":false}"
+        },
+        {"title":"Album Delete",
+        "href":"https://api.getchute.com/v2/albums/:id",
+        "method":"DELETE"
+        }
+      ],
+    "album_assets":
+      [
+        {"title":"Album Assets",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets",
+        "method":"GET"
+        },
+        {"title":"Album Asset",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id",
+        "method":"GET"
+        },
+        {"title":"Album Assets Geo Search",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/geo/:lat_lng/:radius",
+        "method":"GET",
+        "request":"/v2/assets/geo/25.64,-100.38/10000 or /v2/albums/:album_id/assets/geo/25.64,-100.38/10000"
+        },
+        {"title":"Import Album Assets",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/import",
+        "method":"POST"
+        },
+        {"title":"Sort Album Assets"
+        ,"href":"https://api.getchute.com/v2/albums/:album_id/assets/sort",
+        "method":"POST",
+        "request":
+          "{\"ids\":[1,2,3]}"},
+          {"title":"Move Album Asset",
+          "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/move/:target_album_id",
+          "method":"POST"
+          },
+          {"title":"Copy Album Asset",
+          "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/copy/:target_album_id",
+          "method":"POST"
+          }
+      ],
+    "tags":
+      [
+        {"title":"Asset Tags",
+        "href":"https://api.getchute.com/v2/assets/:asset_id/tags",
+        "method":"GET"
+        },
+        {"title":"Album Tags",
+        "href":"https://api.getchute.com/v2/albums/:album_id/tags",
+        "method":"GET"
+        },
+        {"title":"Create Asset Tags",
+        "href":"https://api.getchute.com/v2/assets/:asset_id/tags",
+        "method":"POST",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Create Album Tags",
+        "href":"https://api.getchute.com/v2/albums/:album_id/tags",
+        "method":"POST",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Update Asset Tags",
+        "href":"https://api.getchute.com/v2/assets/:asset_id/tags",
+        "method":"PUT",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Update Album Tags",
+        "href":"https://api.getchute.com/v2/albums/:album_id/tags",
+        "method":"PUT",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Delete Asset Tags",
+        "href":"https://api.getchute.com/v2/assets/:asset_id/tags",
+        "method":"DELETE",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Delete Album Tags",
+        "href":"https://api.getchute.com/v2/albums/:album_id/tags",
+        "method":"DELETE",
+        "request":"{\"tags\":[\"tag1\",\"tag2\"]} or {\"tags\":\"tag1\"}"
+        },
+        {"title":"Search Asset Tags",
+        "href":"https://api.getchute.com/v2/assets/tags/:tag_name",
+        "method":"GET"
+        },
+        {"title":"Search Album Tags",
+        "href":"https://api.getchute.com/v2/albums/tags/:tag_name",
+        "method":"GET"
+        }
+      ],
+    "triggers":
+      [
+        {"title":"Trigger Listing",
+        "href":"https://api.getchute.com/v2/triggers",
+        "method":"GET"
+        },
+        {"title":"Trigger Details",
+        "href":"https://api.getchute.com/v2/triggers/:id",
+        "method":"GET"
+        },
+        {"title":"Create Trigger",
+        "href":"https://api.getchute.com/v2/triggers",
+        "method":"POST",
+        "request":
+          "{\"url\":\"http://yoursite.com/target\",
+          \"event\":\"asset_created / asset_updated / asset_deleted / album_created / album_updated / album_deleted / album_asset_moderated / comment_created\"
+          }"
+        },
+        {"title":"Update Trigger",
+        "href":"https://api.getchute.com/v2/triggers/:id",
+        "method":"PUT",
+        "request":"{\"url\":\"http://yoursite.com/target\"}"
+        },
+        {"title":"Delete Trigger",
+        "href":"https://api.getchute.com/v2/triggers/:id",
+        "method":"DELETE"
+        }
+      ],
+    "comments":
+      [
+        {"title":"Comment Listing",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/comments",
+        "method":"GET"
+        },
+        {"title":"Create Comment",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/comments",
+        "method":"POST",
+        "request":"{\"comment_text\":\"Hello World\",\"name\":\"Gaurav Sharma\",\"email\":\"gaurav@email.com\"}"
+        },
+        {"title":"Delete Comment",
+        "href":"https://api.getchute.com/v2/comments/:id",
+        "method":"DELETE"}
+      ],
+    "storage":
+      [
+        {"title":"Store a Temp Object (key optional)",
+        "href":"https://api.getchute.com/v2/store/temp/(:key)",
+        "method":"POST"
+        },
+        {"title":"Retrieve Temp Object (No Auth)",
+        "href":"https://api.getchute.com/v2/store/temp/:key?app_id=app-id-used-in-storage",
+        "method":"GET"
+        },
+        {"title":"Store a Private Object (key optional)",
+        "href":"https://api.getchute.com/v2/store/private/(:key)",
+        "method":"POST"},{"title":"Retrieve Private Object",
+        "href":"https://api.getchute.com/v2/store/private/:key",
+        "method":"GET"
+        },
+        {"title":"Store a Public Object (key optional)",
+        "href":"https://api.getchute.com/v2/store/public/(:key)",
+        "method":"POST"},{"title":"Retrieve Public Object (No Auth)",
+        "href":"https://api.getchute.com/v2/store/public/:key?app_id=app-id-used-in-storage",
+        "method":"GET"
+        }
+      ],
+    "profile":
+      [
+        {"title":"User Details",
+        "href":"https://api.getchute.com/v2/me",
+        "method":"GET"
+        }
+      ],
+    "hearting":
+      [
+        {"title":"Count Hearts for an Asset inside an Album (No Auth, available elsewhere too)",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/hearts",
+        "method":"GET"
+        },
+        {"title":"Heart a Asset inside a Album (No Auth)",
+        "href":"https://api.getchute.com/v2/albums/:album_id/assets/:asset_id/hearts",
+        "method":"POST"
+        },
+        {"title":"Remove a Heart (No Auth, requires key)",
+        "href":"https://api.getchute.com/v2/hearts/:key",
+        "method":"DELETE"
+        }
+      ]
+    }
+  }
+}
