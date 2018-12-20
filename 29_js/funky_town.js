@@ -40,23 +40,37 @@ var randomStudent = function(){
 //gcd
 var gcdClick = document.getElementById("gcd");
 var getGCD = function(){
-  console.log(gcd(Math.floor(Math.random()*30), Math.floor(Math.random()*30)));
+  let a = Math.floor(Math.random()*30);
+  let b = Math.floor(Math.random()*30);
+  let result = gcd(a,b);
+  console.log(result);
   document.getElementById("gcd");
+  var gcdResult = document.getElementById("gcdRes");
+  gcdResult.innerHTML = "GCD of " + a + " & " + b + " is " + result;
 };
 gcdClick.addEventListener('click', getGCD);
+
 
 //fib
 var fibClick = document.getElementById("fib");
 var getFib = function(){
-  console.log(fibonacci(Math.floor(Math.random()*15)));
+  let a = Math.floor(Math.random()*30);
+  let result = fibonacci(a);
+  console.log(result);
   document.getElementById("fib");
+  var fibResult = document.getElementById("fibRes");
+  fibResult.innerHTML = "Fibonacci number " + a + " is " + result;
 };
 fibClick.addEventListener('click', getFib);
+
 
 //random student
 var randClick = document.getElementById("randStu");
 var getRand = function(){
-  console.log(randomStudent());
+  let result = randomStudent()
+  console.log(result);
   document.getElementById("randStu");
+  var randResult = document.getElementById("randRes");
+  randResult.innerHTML = "Random Student:" + result;
 };
 randClick.addEventListener('click', getRand);
