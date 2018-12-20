@@ -61,6 +61,7 @@ var getFib = function(){
   var fibResult = document.getElementById("fibRes");
   fibResult.innerHTML = "Fibonacci number " + a + " is " + result;
 };
+//fibClick.addEventListener('click',function(e) {console.log(e);});
 fibClick.addEventListener('click', getFib);
 
 
